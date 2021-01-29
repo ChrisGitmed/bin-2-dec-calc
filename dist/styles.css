@@ -41,8 +41,12 @@ p {
 
 .calc-body > input {
   padding: 0.25rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   border-radius: 10%;
   background-color: #f1faee;
   border:1px solid black;
+}
+
+.error-text {
+  color: #e63946;
 }
