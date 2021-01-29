@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NavBar from './nav.jsx'
 
 ReactDOM.render(
-  <h1>Hello world!</h1>,
+  <NavBar />,
   document.querySelector('#root')
 )

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-color: #457b9d;
+}
+
+h1 {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.navbar {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #1d3557;
+  border: 2px solid;
+  border-color: transparent transparent #000 transparent;
+  border-radius: 0% 0% 100% 100%;
+}
