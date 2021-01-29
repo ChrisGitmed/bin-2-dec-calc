@@ -7,6 +7,11 @@ h1 {
   font-family: 'Share Tech Mono', monospace;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+}
+
 .navbar {
   height: 4rem;
   display: flex;
@@ -17,4 +22,26 @@ h1 {
   border: 2px solid;
   border-color: transparent transparent #000 transparent;
   border-radius: 0% 0% 100% 100%;
+}
+
+.calc-frame {
+  background-color: white;
+  max-width: 600px;
+  border-radius: 5%;
+  margin: 2rem auto;
+}
+
+.calc-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calc-body > input {
+  margin: 0 0 3rem 2rem;
+  padding: 0.25rem;
+  border-radius: 10%;
+  background-color: #f1faee;
+  border:1px solid black;
 }
