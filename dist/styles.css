@@ -10,6 +10,7 @@ h1 {
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
+  margin: 0;
 }
 
 .navbar {
@@ -26,21 +27,21 @@ p {
 
 .calc-frame {
   background-color: white;
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 5%;
   margin: 2rem auto;
+  padding: 1rem 2rem;
 }
 
-.calc-header {
+.calc-body {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding-top: 1rem;
 }
 
 .calc-body > input {
-  margin: 0 0 3rem 2rem;
   padding: 0.25rem;
+  margin-right: 2rem;
   border-radius: 10%;
   background-color: #f1faee;
   border:1px solid black;
