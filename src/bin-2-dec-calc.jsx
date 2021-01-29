@@ -5,21 +5,28 @@ export default class Bin2DecCalc extends React.Component {
     super(props);
     this.state = {
       input: '',
-      output: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    console.log('event.target.value: ', event.target.value);
     this.setState({
       input: event.target.value
     })
   }
 
+  isNotBinary(input) {
+    return /[^10]/.test(input)
+  }
+
   render() {
-    const { handleChange } = this;
-    const { input, output } = this.state;
+    const { handleChange, isNotBinary } = this;
+    let { input } = this.state;
+
+    let output = <p className="flavor-text">Decimal: </p>
+    if (isNotBinary(input)) {
+      output = <p className="error-text">Only 0 and 1 may be entered</p>
+    }
 
     return (
       <div className="calc-frame">
@@ -28,7 +35,7 @@ export default class Bin2DecCalc extends React.Component {
         </header>
         <div className="calc-body">
           <input type="text" placeholder="ex. 10100111" maxLength="8" onChange={handleChange}/>
-          <p className="converted-value">Output: {output}</p>
+          {output}
         </div>
       </div>
     )
