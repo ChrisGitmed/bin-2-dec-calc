@@ -19,23 +19,37 @@ export default class Bin2DecCalc extends React.Component {
     return /[^10]/.test(input)
   }
 
+  calculateDecimal(input) {
+    return parseInt(input, 2);
+  }
+
   render() {
-    const { handleChange, isNotBinary } = this;
+    const { handleChange, isNotBinary, calculateDecimal } = this;
     let { input } = this.state;
 
-    let output = <p className="flavor-text">Decimal: </p>
-    if (isNotBinary(input)) {
-      output = <p className="error-text">Only 0 and 1 may be entered</p>
+    let output, errorMessage;
+    if (input !== '') {
+      if (isNotBinary(input)) {
+        errorMessage = "Only 0 and 1 may be entered."
+        output = <p className="flavor-text">Decimal: ???</p>
+      } else {
+        output = <p className="flavor-text">Decimal: {calculateDecimal(input)}</p>
+      }
     }
 
     return (
-      <div className="calc-frame">
+      <div className="calc-frame drop-shadow">
         <header className="calc-header">
-          <p>Enter up to 8 binary digits to view the decimal equivalent.</p>
+          <p>Enter either ones or zeroes.</p>
         </header>
         <div className="calc-body">
-          <input type="text" placeholder="ex. 10100111" maxLength="8" onChange={handleChange}/>
-          {output}
+          <div className="row justify-center">
+            <input type="text" placeholder="ex. 10100111" onChange={handleChange} />
+          </div>
+          <div className="row error-placeholder justify-space-between">
+            <p className="error-text">{errorMessage}</p>
+            {output}
+          </div>
         </div>
       </div>
     )
