@@ -31,9 +31,9 @@ export default class Bin2DecCalc extends React.Component {
     if (input !== '') {
       if (isNotBinary(input)) {
         errorMessage = "Only 0 and 1 may be entered."
-        output = <p className="flavor-text">Decimal: ???</p>
+        output = <p>Decimal: ???</p>
       } else {
-        output = <p className="flavor-text">Decimal: {calculateDecimal(input)}</p>
+        output = <p>Decimal: {calculateDecimal(input)}</p>
       }
     }
 
@@ -46,7 +46,7 @@ export default class Bin2DecCalc extends React.Component {
           <div className="row justify-center">
             <input type="text" placeholder="ex. 10100111" onChange={handleChange} />
           </div>
-          <div className="row error-placeholder justify-space-between">
+          <div className="row justify-space-between">
             <p className="error-text">{errorMessage}</p>
             {output}
           </div>
